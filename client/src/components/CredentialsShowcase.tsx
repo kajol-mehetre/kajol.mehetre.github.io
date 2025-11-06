@@ -65,15 +65,6 @@ export function CredentialsShowcase() {
   return (
     <section className="py-20 px-6 border-t border-primary/10" id="credentials" data-testid="section-credentials">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent" data-testid="text-credentials-heading">
-            Credentials & Honors
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional certifications and notable achievements in VR, AI, and software engineering
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left: Certifications & Courses */}
           <div className="space-y-6">
