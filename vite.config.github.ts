@@ -16,5 +16,5 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist-github"),
     emptyOutDir: true,
   },
-  base: "/Kajol.Mehetre.Github.io/",
+  base: "/kajol.mehetre.github.io/",
 });
