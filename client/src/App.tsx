@@ -12,7 +12,6 @@ import ProjectDetail from "@/pages/ProjectDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
-  const [, setLocation] = useLocation(); // optional if you need programmatic navigation
   return (
     <Switch>
       <Route path="#/" component={Home} />
