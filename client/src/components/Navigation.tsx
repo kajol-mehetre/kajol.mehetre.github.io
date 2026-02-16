@@ -9,8 +9,8 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", path: "#/" },
-    { label: "Projects", path: "#/projects" },
+    { label: "Home", path: "/" },
+    { label: "Projects", path: "/projects" },
     // { label: "Personality", path: "/personality" },
   ];
 
@@ -26,7 +26,7 @@ export function Navigation() {
 
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link key={item.path} href={`{item.path}`}>
+              <Link key={item.path} href={`#${item.path}`}>
                 <a
                   className={`font-rajdhani px-4 py-2 rounded-md uppercase text-sm font-semibold tracking-wide transition-colors ${
                     location === item.path
