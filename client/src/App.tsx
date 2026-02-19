@@ -1,4 +1,5 @@
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -11,7 +12,7 @@ import ProjectDetail from "@/pages/ProjectDetail";
 // import Personality from "@/pages/Personality";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -24,17 +25,20 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <div className="min-h-screen bg-background text-foreground">
-          <Navigation />
-          <Router />
-          <ChatbotPlaceholder />
-        </div>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Router hook={useHashLocation}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <div className="min-h-screen bg-background text-foreground">
+            <Navigation />
+            <AppRoutes />
+            <ChatbotPlaceholder />
+          </div>
+          <Toaster />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </Router>
   );
 }
+
 
 export default App;
